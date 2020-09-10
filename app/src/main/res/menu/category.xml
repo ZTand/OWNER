@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/restaurant_korean"
+            android:title="한식"
+            app:showAsAction="never">
+    </item>
+    <item
+            android:id="@+id/restaurant_snack"
+            android:title="분식"
+            app:showAsAction="never">
+    </item>
+    <item
+            android:id="@+id/restaurant_chinese"
+            android:title="중식"
+            app:showAsAction="never">
+    </item>
+    <item
+            android:id="@+id/restaurant_japanese"
+            android:title="일식"
+            app:showAsAction="never">
+    </item>
+    <item
+            android:id="@+id/restaurant_asian"
+            android:title="아시안, 양식"
+            app:showAsAction="never">
+    </item>
+    <item
+            android:id="@+id/restaurant_chicken"
+            android:title="치킨"
+            app:showAsAction="never">
+    </item>
+    <item
+            android:id="@+id/restaurant_pizza"
+            android:title="피자"
+            app:showAsAction="never">
+    </item>
+    <item
+            android:id="@+id/restaurant_pork_hocks"
+            android:title="족발 보쌈"
+            app:showAsAction="never">
+    </item>
+    <item
+            android:id="@+id/restaurant_night"
+            android:title="야식"
+            app:showAsAction="never">
+    </item>
+    <item
+            android:id="@+id/restaurant_fastfood"
+            android:title="패스트푸드"
+            app:showAsAction="never">
+    </item>
+</menu>
