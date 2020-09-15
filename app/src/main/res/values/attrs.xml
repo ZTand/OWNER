@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Table">
+        <attr name="table_item_name" format="integer" />
+        <attr name="table_item_order" format="string" />
+    </declare-styleable>
+</resources>

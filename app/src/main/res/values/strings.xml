@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Clean POS</string>
+    <string name="register_underline"><u>회원가입</u></string>
 </resources>

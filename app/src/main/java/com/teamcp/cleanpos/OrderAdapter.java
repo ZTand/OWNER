@@ -11,8 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class OrderAdapter extends ArrayAdapter<OrderVO> {
@@ -45,8 +43,8 @@ public class OrderAdapter extends ArrayAdapter<OrderVO> {
 
         TextView tableNumberTextView = holder.tableNumberTextView;
         TextView orderTextView = holder.orderTextView;
-        Button orderTypeButton = holder.orderTypeButton;
-        Button receiptTypeButton = holder.receiptTypeButton;
+        TextView orderTypeButton = holder.orderTypeButton;
+        TextView receiptTypeButton = holder.receiptTypeButton;
         TextView orderTimeTextView = holder.orderTimeTextView;
 
         final OrderVO vo = datas.get(position);

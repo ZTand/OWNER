@@ -1,8 +1,10 @@
 package com.teamcp.cleanpos;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -30,7 +32,7 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button tableSettingButton;
     GridLayout tableLayout;
@@ -44,7 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             TextView date = findViewById(R.id.date);
-            SimpleDateFormat format2 = new SimpleDateFormat ( "M월 d일  H:m a");
+            SimpleDateFormat format2 = new SimpleDateFormat("M월 d일  HH:mm:ss a");
+
             @Override
             public void run() {
                 Date time = new Date();
@@ -76,24 +79,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         tableSettingButton = findViewById(R.id.table_setting_btn);
         tableSettingButton.setOnClickListener(this);
-
         tableLayout = findViewById(R.id.table_layout);
     }
 
     DialogInterface.OnClickListener dialogListener = new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialog, int which) {
-            if(dialog==tableSettingDialog && which == DialogInterface.BUTTON_POSITIVE) {
+            if (dialog == tableSettingDialog && which == DialogInterface.BUTTON_POSITIVE) {
                 EditText column = tableSettingDialog.findViewById(R.id.column_count_EditText);
                 tableLayout.removeAllViews();
-                tableLayout.setColumnCount(Integer.parseInt(column.getText().toString()));
+                int C = Integer.parseInt(column.getText().toString());
+                tableLayout.setColumnCount(C);
 
                 EditText num = tableSettingDialog.findViewById(R.id.table_count_EditText);
                 int N = Integer.parseInt(num.getText().toString());
-                LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
-                GridLayout tableLayout = findViewById(R.id.table_layout);
-                for(int i=0; i<N; i++) {
-                    tableLayout.addView(new Button(MainActivity.this));
+                int W = N / C;
+                if(N % C != 0) W++;
+                LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+                for (int i = 0; i < N; i++) {
+                    Table table = new Table(MainActivity.this, i + 1, "주문", C, W, tableLayout.getWidth(), tableLayout.getHeight());
+                    tableLayout.addView(table);
                 }
             }
         }
@@ -101,9 +106,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if(v==tableSettingButton) {
+        if (v == tableSettingButton) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
             View view = inflater.inflate(R.layout.dialog_table_setting, null);
             builder.setView(view);
 

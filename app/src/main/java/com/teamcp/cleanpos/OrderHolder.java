@@ -1,14 +1,13 @@
 package com.teamcp.cleanpos;
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class OrderHolder {
     public TextView tableNumberTextView;
     public TextView orderTextView;
-    public Button orderTypeButton;
-    public Button receiptTypeButton;
+    public TextView orderTypeButton;
+    public TextView receiptTypeButton;
     public TextView orderTimeTextView;
 
     public OrderHolder(View root) {
