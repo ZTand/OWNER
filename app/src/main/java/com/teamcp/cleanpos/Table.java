@@ -21,8 +21,6 @@ public class Table extends LinearLayout {
     TextView tableItemName;
     TextView tableItemOrder;
     GridLayout tableLayout;
-    int layoutWidth = 0;
-    int layoutHeight = 0;
 
     public Table(Context context) {
         super(context);
@@ -43,16 +41,6 @@ public class Table extends LinearLayout {
         this(context);
         tableItemName.setText("" + tableNumber);
         tableItemOrder.setText(order);
-        Handler handler = new Handler();
-
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                table.setMinimumWidth(layoutWidth / C);
-//                table.setMinimumHeight(layoutHeight / W);
-//            }
-//        }, 100);
-
         table.setMinimumWidth(layoutWidth / C);
         table.setMinimumHeight(layoutHeight / W);
     }
