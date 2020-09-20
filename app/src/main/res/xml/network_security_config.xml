@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <network-security-config>
+
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">ec2-18-224-95-118.us-east-2.compute.amazonaws.com/user</domain>
+
+        <domain includeSubdomains="true">ec2-13-124-71-149.ap-northeast-2.compute.amazonaws.com:3000/</domain>
+
     </domain-config>
+
 </network-security-config>
